@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Weight Issue</title>
+    <style>
+        /* Basic Paragraph Style */
+        p {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        /* Specific Safari Handling */
+        @media not all and (min-resolution:.001dpcm) { 
+            @supports (-webkit-appearance:none) {
+                p {
+                    font-weight: 600; /* This might not render as bold in Safari */
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>This paragraph should be bold in Chrome and Edge but not in Safari.</p>
+</body>
+</html>
